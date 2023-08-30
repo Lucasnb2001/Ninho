@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model autor {
+  autor_cpf  String @id @db.VarChar(15)
+  autor_nome String @db.VarChar(40)
+}
+
+model livro {
+  livro_isbn     Int     @id
+  livro_titulo   String  @db.VarChar(50)
+  livro_preco    Float   @db.Float
+  livro_idioma   String? @db.VarChar(15)
+  livro_num_pags Int?
+}
