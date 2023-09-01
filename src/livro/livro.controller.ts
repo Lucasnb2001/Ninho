@@ -13,7 +13,7 @@ import { Livro } from './livro.model';
 import { LivroService } from './livro.service';
 import { Request, Response } from 'express';
 
-@Controller('api/v1/Livro')
+@Controller('livro')
 export class LivroController {
   constructor(private readonly livroService: LivroService) {}
 

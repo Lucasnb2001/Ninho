@@ -16,7 +16,15 @@ model autor {
 model livro {
   livro_isbn     Int     @id
   livro_titulo   String  @db.VarChar(50)
+  livro_imagem   String?  @db.VarChar(50)
   livro_preco    Float   @db.Float
   livro_idioma   String? @db.VarChar(15)
   livro_num_pags Int?
+}
+
+model Purchase {
+  id        Int      @id @default(autoincrement())
+  productId Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
