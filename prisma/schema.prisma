@@ -24,6 +24,7 @@ model livro {
 
 model Purchase {
   id        Int      @id @default(autoincrement())
+  buyer     String
   productId Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
